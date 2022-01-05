@@ -1,8 +1,10 @@
 import JSX = preact.JSX
 
-interface Posts {
+interface Recipes {
     id: number;
-    userId: number;
+    user_id: string;
     title: string;
-    body: string;
+    description: string;
+    steps: string;
+    nutrition: string;
 }

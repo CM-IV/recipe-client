@@ -38,6 +38,9 @@ const Nav = () => {
             <Link to={"/"} class="navbar-item mt-2">
               Home
             </Link>
+            <Link to={"/recipes"} class="navbar-item mt-2">
+              Recipes
+            </Link>
           </div>
         </div>
       </nav>
