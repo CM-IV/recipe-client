@@ -39,12 +39,18 @@ const GetRecipes = () => {
         {recipeData.map((recipes) => {
 
           return (
-              <div class="box" key={recipes.id}>
-                  <h2 class="subtitle">{recipes.title}</h2>
-                  <p>{recipes.description}</p>
-                  <p>{recipes.steps}</p>
-                  <p>{recipes.nutrition}</p>
-              </div>
+            <div class="box" key={recipes.id}>
+              <article class="media">
+                <div class="media-content">
+                  <div class="content">
+                    <h2 class="subtitle">{recipes.title}</h2>
+                    <p>{recipes.description}</p>
+                    <p>{recipes.steps}</p>
+                    <p>{recipes.nutrition}</p>
+                  </div>
+                </div>
+              </article>
+            </div>
           )
 
         })}
