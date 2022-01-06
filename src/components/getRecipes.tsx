@@ -9,7 +9,7 @@ const GetRecipes = () => {
   const [lastPage, setLastPage] = useState(0);
   const [isPaginated, setIsPaginated] = useState(0);
 
-  const getRecipes = () => {
+  const recipes = () => {
     axios.get(`recipes/?page=${page}`)
       .then((res) => {
         return res.data;
@@ -25,7 +25,7 @@ const GetRecipes = () => {
   }
 
   useEffect(() => {
-    getRecipes();
+    recipes();
   }, [page]);
 
   return (
