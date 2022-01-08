@@ -2,10 +2,6 @@ import { Fragment } from "preact";
 
 
 const Greeting = () => {
-    const token = localStorage.getItem("token");
-
-    console.log(token);
-
     return (
         <Fragment>
             <section class="section">
@@ -18,7 +14,6 @@ const Greeting = () => {
                 </figure>
             </section>
         </Fragment>
-        
     )
 
 }

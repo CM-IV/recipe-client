@@ -4,6 +4,7 @@ import { Recipes } from "./pages/Recipes";
 import { LoginPage } from "./pages/loginPage";
 import { LogoutPage } from "./pages/logoutPage";
 import { DashboardPage } from "./pages/dashboardPage";
+import { EditRecipesPage } from "./pages/editRecipesPage";
 import { ProtectedRoute } from "./components/protectedRoute";
 import { NotFound } from "./pages/_404";
 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/login" component={LoginPage}></Route>
         <ProtectedRoute path="/logout" component={LogoutPage}></ProtectedRoute>
         <ProtectedRoute path="/dashboard" component={DashboardPage}></ProtectedRoute>
+        <ProtectedRoute path="/recipes/:id/edit" component={EditRecipesPage}></ProtectedRoute>
         <Route component={NotFound}></Route>
       </Switch>
     </div>
