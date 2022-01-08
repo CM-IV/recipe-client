@@ -1,7 +1,15 @@
 import { Fragment } from "preact";
 import { Link } from "wouter-preact";
+import { useState } from "preact/hooks";
 
 const Nav = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const token = Boolean(localStorage.getItem("token"));
+
+  if (token) {
+    setIsAuthenticated(true);
+  }
+
   return (
     <Fragment>
       <nav
@@ -41,6 +49,27 @@ const Nav = () => {
             <Link to={"/recipes"} class="navbar-item mt-2">
               Recipes
             </Link>
+            {isAuthenticated && (
+              <Link to={"/dashboard"} class="navbar-item mt-2">
+                Dashboard
+              </Link>
+            )}
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                {!isAuthenticated && (
+                  <Link to={"/login"} class="button is-link">
+                    Admin Login
+                  </Link>
+                )}
+                {isAuthenticated && (
+                  <Link to={"/logout"} class="button is-danger is-light">
+                    Logout
+                  </Link>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </nav>

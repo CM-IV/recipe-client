@@ -1,6 +1,10 @@
 import { Route, Switch } from "wouter-preact";
 import { Home } from "./pages/Home";
 import { Recipes } from "./pages/Recipes";
+import { LoginPage } from "./pages/loginPage";
+import { LogoutPage } from "./pages/logoutPage";
+import { DashboardPage } from "./pages/dashboardPage";
+import { ProtectedRoute } from "./components/protectedRoute";
 import { NotFound } from "./pages/_404";
 
 
@@ -12,6 +16,9 @@ const App = () => {
       <Switch>
         <Route path="/" component={Home}></Route>
         <Route path="/recipes" component={Recipes}></Route>
+        <Route path="/login" component={LoginPage}></Route>
+        <ProtectedRoute path="/logout" component={LogoutPage}></ProtectedRoute>
+        <ProtectedRoute path="/dashboard" component={DashboardPage}></ProtectedRoute>
         <Route component={NotFound}></Route>
       </Switch>
     </div>

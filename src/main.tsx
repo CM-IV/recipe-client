@@ -7,6 +7,6 @@ const url = import.meta.env.VITE_APP_BASE_URL;
 
 axios.defaults.baseURL = url?.toString();
 
-console.log(url?.toString());
+// console.log(url?.toString());
 
 render(<App />, document.body);

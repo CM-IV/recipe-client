@@ -2,6 +2,9 @@ import { Fragment } from "preact";
 
 
 const Greeting = () => {
+    const token = localStorage.getItem("token");
+
+    console.log(token);
 
     return (
         <Fragment>
