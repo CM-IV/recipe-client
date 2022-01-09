@@ -10,7 +10,9 @@ const AddRecipe = () => {
 
   const token = localStorage.token;
 
-  const submit = () => {
+  const submit = (e: Event) => {
+    e.preventDefault();
+
     alert("Your book was added!");
 
     const recipeData = {
