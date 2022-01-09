@@ -1,7 +1,17 @@
 import { Fragment } from "preact";
+import { Redirect } from "wouter-preact";
 
 
 const Greeting = () => {
+
+    const user = localStorage.user;
+
+    if (user && user !== "42baecf8-d5ed-411f-b3eb-cf4d45f0ce7a") {
+
+        return <Redirect to={"/admin-perms"} />
+
+    }
+
     return (
         <Fragment>
             <section class="section">

@@ -19,13 +19,13 @@ const Login = () => {
         })
         .then((res) => {
 
-            return res.data.token;
+            return res.data;
 
         })
         .then((data) => {
 
-            localStorage.setItem("token", data.token);
-            console.log(data.token);
+            localStorage.token = data.bearer.token;
+            localStorage.user = data.userId;
             setLocation("/");
 
         })

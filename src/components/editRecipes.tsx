@@ -12,7 +12,7 @@ const EditRecipes = () => {
     const [location, _setLocation] = useLocation();
     let id: string;
 
-    const token = localStorage.getItem("token");
+    const token = localStorage.token;
 
     let url = location;
 

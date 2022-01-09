@@ -4,7 +4,7 @@ import { useState } from "preact/hooks";
 
 const Nav = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const token = Boolean(localStorage.getItem("token"));
+  const token = Boolean(localStorage.token);
 
   if (token) {
     setIsAuthenticated(true);

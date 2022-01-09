@@ -66,57 +66,60 @@ const Dashboard = () => {
                     </div>
                 </div>
             </section>
-            <section class="section">
-                <div class="table-container">
-                    <table class="table is-bordered">
-                    <thead>
-                        <tr>
-                            <th>ID#</th>
-                            <th>UserID</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Steps</th>
-                            <th>Nutrition</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {recipeData.map((r: Recipes) => {
-                        return (
-                            <tr key={r.id}>
-                                <td>{r.id}</td>
-                                <td>{r.user_id}</td>
-                                <td>{r.title}</td>
-                                <td>{r.description}</td>
-                                <td>{r.steps}</td>
-                                <td>{r.nutrition}</td>
-                                <td>
-                                    <div class="level">
-                                    <div class="level-item">
-                                        <Link
-                                        to={`/recipes/${r.id}/edit`}
-                                        class="button is-small"
-                                        >
-                                        Edit
-                                        </Link>
-                                    </div>
-                                    <div class="level-item">
-                                        <button
-                                        class="button is-small"
-                                        onClick={() => deleteRow(r.id)}
-                                        >
-                                        Delete
-                                        </button>
-                                    </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        );
-                        })}
-                    </tbody>
-                    </table>
-                </div>
-            </section>
+            {recipeNum > 0 && (
+                <section class="section">
+                    <div class="table-container">
+                        <table class="table is-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID#</th>
+                                    <th>UserID</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Steps</th>
+                                    <th>Nutrition</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {recipeData.map((r: Recipes) => {
+                                    return (
+                                        <tr key={r.id}>
+                                            <td>{r.id}</td>
+                                            <td>{r.user_id}</td>
+                                            <td>{r.title}</td>
+                                            <td>{r.description}</td>
+                                            <td>{r.steps}</td>
+                                            <td>{r.nutrition}</td>
+                                            <td>
+                                                <div class="level">
+                                                <div class="level-item">
+                                                    <Link
+                                                    to={`/recipes/${r.id}/edit`}
+                                                    class="button is-small"
+                                                    >
+                                                    Edit
+                                                    </Link>
+                                                </div>
+                                                <div class="level-item">
+                                                    <button
+                                                    class="button is-small"
+                                                    onClick={() => deleteRow(r.id)}
+                                                    >
+                                                    Delete
+                                                    </button>
+                                                </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            )}
+                
             {recipeNum > 5 && (
                 <Paginator
                 page={page}

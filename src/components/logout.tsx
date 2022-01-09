@@ -3,7 +3,7 @@ import { Fragment } from "preact";
 import { Link } from "wouter-preact";
 
 const Logout = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.token;
 
   const submit = () => {
     axios.post("logout", {}, {
