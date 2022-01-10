@@ -6,6 +6,7 @@ import { useLocation } from "wouter-preact";
 const Login = () => {
     const [username, sendUsername] = useState("");
     const [password, sendPassword] = useState("");
+    const [Error, setError] = useState(false);
     const [_location, setLocation] = useLocation();
 
     const submit = (e: Event) => {
@@ -31,7 +32,8 @@ const Login = () => {
         })
         .catch((err) => {
 
-            console.error(err);
+            setError(true);
+            console.error("There was an error! ", err);
 
         })
 
@@ -48,6 +50,11 @@ const Login = () => {
                         </a>
                     </section>
                     <div class="box">
+                        {Error && (
+                            <div class="notification is-danger">
+                                <p>Incorrect login info.</p>
+                            </div>
+                        )}
                         <p class="title">Please Sign In</p>
                         <form onSubmit={submit}>
 
